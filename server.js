@@ -5,23 +5,24 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title: 'Article One | Harish Raju',
-    heading: 'Article One',
-    date: 'Sep 18, 2017',
-    content:`
-        <p>
-            This is the content that is going to be displayed when I call it . YO!
-        </p>
-        <p>
-            This is the content that is going to be displayed when I call it . YO!
-        </p>
-        <p>
-            This is the content that is going to be displayed when I call it . YO!
-        </p>`
-};
 
-var articleTwo = {
+var articles =  {
+    article-one: {
+        title: 'Article One | Harish Raju',
+        heading: 'Article One',
+        date: 'Sep 18, 2017',
+        content:`
+            <p>
+                This is the content that is going to be displayed when I call it . YO!
+            </p>
+            <p>
+                This is the content that is going to be displayed when I call it . YO!
+            </p>
+            <p>
+                This is the content that is going to be displayed when I call it . YO!
+            </p>`
+},
+    article-two: {
     title: 'Article Two | Harish Raju',
     heading: 'Article Two',
     date: 'Sep 18, 2017',
@@ -35,9 +36,8 @@ var articleTwo = {
         <p>
             This is the content that is going to be displayed when I call it . YO!
         </p>`
-}
-
-var articleThree = {
+},
+    article-three: {
     title: 'Article Three | Harish Raju',
     heading: 'Artcile Three',
     date: 'Sep 18, 2017',
@@ -51,7 +51,8 @@ var articleThree = {
         <p>
             This is the content that is going to be displayed when I call it . YO!
         </p>`
-}
+} 
+};
 
 function createTemplate (data) { 
     var title = data.title;
@@ -91,8 +92,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res) {
