@@ -8,7 +8,7 @@ app.use(morgan('combined'));
 var articleOne = {
     title: 'Article One | Harish Raju',
     heading: 'Article One',
-    data: 'Sep 18, 2017',
+    date: 'Sep 18, 2017',
     content:`
         <p>
             This is the content that is going to be displayed when I call it . YO!
