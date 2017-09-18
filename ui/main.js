@@ -20,3 +20,17 @@ button.onclick = function() {
     request.open('GET', 'http://harisharaju1.imad.hasura-app.io/counter', true);
     request.send(null);
 };
+
+//Submit name
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+var submit = document.getELementById('submit_btn');
+submit.onclick = function() {
+    var names = ['naem1','name2','name3'];
+    var list = '';
+    for (var i = 0; i < names.length; i++) {
+        list += '<li>' + namese[i] + '</li>';
+    }
+    var ul = document.getElementById('naemlist'); 
+    ul.innerHTML = list;
+};
