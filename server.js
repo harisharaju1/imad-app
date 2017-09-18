@@ -92,7 +92,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-
+//counter code
 var counter = 0;
 app.get('/counter', function(req,res) {
     counter = counter + 1;
@@ -109,6 +109,7 @@ app.get('/submit-name/:name', function(req,res) {
 });
 
 app.get('/:articleName', function (req, res) {
+  //using the express's req function 
   var articleName = req.params.articleName;
   res.send(createTemplate(articles[articleName]));
 });
