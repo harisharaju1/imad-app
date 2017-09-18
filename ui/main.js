@@ -1,5 +1,5 @@
 var button = document.getElementById('counter');
-var counter = 0;
+
 button.onclick = function() {
     //Make a request to the counter end-point
     var request = new XMLHttpRequest();
@@ -10,12 +10,12 @@ button.onclick = function() {
         if(request.readyState === XMLHttpRequest.DONE);
         //Take some action
         if(request.status == 200) {
-            var counmter = request.responseTExt;
-            var span = documenr.getElementById('count');
-            span.innerHTML = Counter.toString();
+            var counter = request.responseTExt;
+            var span = document.getElementById('count');
+            span.innerHTML = counter.toString();
         }
     };
 
-    request.open('GET' ,'http://harisharaju1.imad.hasura-app.io', true);
+    request.open('GET', 'http://harisharaju1.imad.hasura-app.io/counter', true);
     request.send(null);
 };
