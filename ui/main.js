@@ -40,6 +40,7 @@ comment.onclick = function() {
   };
   var commentInput = document.getElementById('filly');
   var filly = commentInput.value;
+  request.send(null);
 };
 //Submit name
 var submit = document.getElementById('submit_btn');
