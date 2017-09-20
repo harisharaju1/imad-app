@@ -21,6 +21,7 @@ button.onclick = function() {
     request.send(null);
 };
 
+//var comment = document.getElementById('comment-btn');
 //Submit name
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
