@@ -20,9 +20,9 @@ button.onclick = function() {
     request.open('GET', 'http://harisharaju1.imad.hasura-app.io/counter', true);
     request.send(null);
 };
-
+var content = document.getElementById('test');
+content.innerHTML = 'Harish Raju';
 //Submit name
-var 
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
     
