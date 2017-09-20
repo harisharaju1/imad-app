@@ -21,7 +21,26 @@ button.onclick = function() {
     request.send(null);
 };
 
-//var comment = document.getElementById('comment-btn');
+var comment = document.getElementById('comment_btn');
+comment.onclick = function() {
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+      if(request.readyState === XMLHttpRequest.DONE) {
+          if(requeset.status == 200) {
+              var content = request.responseText;
+              content = JSON.parse(content);
+              var clist = '';
+              for (var i = 0; i < content.length; i++) {
+                  clist += '<li>' + content[i] + '</li>';
+              }
+              var ul = document.getElementById('comment_content');
+              ul.innerHTML = clist;
+          }
+      }
+  };
+  var commentInput = document.getElementById('filly');
+  var filly = commentInput.value;
+};
 //Submit name
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
