@@ -21,7 +21,7 @@ button.onclick = function() {
     request.send(null);
 };
 
-var comment = document.getElementById('comment_btn');
+/*var comment = document.getElementById('comment_btn');
 comment.onclick = function() {
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
@@ -41,7 +41,7 @@ comment.onclick = function() {
   var commentInput = document.getElementById('filly');
   var filly = commentInput.value;
   request.send(null);
-};
+};*/
 //Submit name
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
