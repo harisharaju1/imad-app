@@ -101,8 +101,8 @@ app.get('/counter', function(req,res) {
 
 var content = '';
 app.get('/comment', function(req, res) {
-    var comment = req.query.comment;
-    content.push(comment);
+    var filly = req.query.comment;
+    content.push(filly);
     res.send(JSON.stringify(content)); 
 });
 
