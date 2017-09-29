@@ -16,7 +16,7 @@ button.onclick = function() {
             }
         }
     };
-
+    //Make a request
     request.open('GET', 'http://harisharaju1.imad.hasura-app.io/counter', true);
     request.send(null);
 };
@@ -42,14 +42,12 @@ comment.onclick = function() {
   var filly = commentInput.value;
   request.send(null);
 };*/
+
+
 //Submit name
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
-    
-    
      var request = new XMLHttpRequest();
-    
-    
     //Capture the response and store it in a variable
     request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
@@ -70,4 +68,4 @@ submit.onclick = function() {
     var name = nameInput.value;
     request.open('GET', 'http://harisharaju1.imad.hasura-app.io/submit-name?name=' + name, true);
     request.send(null);
-};
+}; 
