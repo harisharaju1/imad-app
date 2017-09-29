@@ -21,13 +21,24 @@ button.onclick = function() {
     request.send(null);
 };
 
-var commentInput = document.getElementById('filly');
-var filly = commentInput.value;
+
 var comment = document.getElementById('comment_btn');
 comment.onclick = function() {
-    var coomcon = 'this is test';
-    var paragraph = document.getElementById('para');
-    paragraph.innerHTML = coomcon; 
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+        if(request.readyState === XMLHttpRequest.DONE) {
+            if(request.satus === 200) {
+                var shizz = request.responseText;
+                shizz = JSON.parse(shizz);
+                var paragraph = document.getElementById('para');
+                paragraph.innerHTML = shizz;
+            }
+        }
+    };
+    var commentInput = document.getElementById('filly');
+    var filly = commentInput.value;
+    request.open('GET', 'http://harisharaju1.imad.hasura-app.io/comment', true); 
+    request.send(null);
 };
 
 //Submit name
