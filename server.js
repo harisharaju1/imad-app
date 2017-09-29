@@ -99,12 +99,12 @@ app.get('/counter', function(req,res) {
     res.send(counter.toString());
 });
 
-var content = '';
+/*var content = '';
 app.get('/comment', function(req, res) {
     var com_con = req.query.content;
     com_con.push(filly);
     res.send(JSON.stringify(content)); 
-});
+});*/
 
 var names = [];
 app.get('/submit-name', function(req,res) {
