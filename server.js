@@ -99,13 +99,6 @@ app.get('/counter', function(req,res) {
     res.send(counter.toString());
 });
 
-var shizz = '';
-app.get('/comment', function(req, res) {
-    var filly = req.query.comment;
-    shizz.push(filly);
-    res.send(JSON.stringify(shizz)); 
-});
-
 var names = [];
 app.get('/submit-name', function(req,res) {
     //Get the name from the request object
