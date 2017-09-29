@@ -102,8 +102,8 @@ app.get('/counter', function(req,res) {
 var content = '';
 app.get('/comment', function(req, res) {
     var comment = req.query.comment;
-    comment.push(filly);
-    res.send(JSON.stringify(comment)); 
+    content.push(comment);
+    res.send(JSON.stringify(content)); 
 });
 
 var names = [];
