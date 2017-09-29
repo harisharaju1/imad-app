@@ -29,8 +29,8 @@ comment.onclick = function() {
           if(requeset.status == 200) {
               var content = request.responseText;
               content = JSON.parse(content);
-              var para = document.getElementById('paragraph');
-              para.innerHTML = content;
+              var paragraph = document.getElementById('para');
+              paragraph.innerHTML = content;
           }
       }
   };
