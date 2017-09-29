@@ -99,11 +99,11 @@ app.get('/counter', function(req,res) {
     res.send(counter.toString());
 });
 
-var content = '';
+var shizz = '';
 app.get('/comment', function(req, res) {
     var filly = req.query.comment;
-    content.push(filly);
-    res.send(JSON.stringify(content)); 
+    shizz.push(filly);
+    res.send(JSON.stringify(shizz)); 
 });
 
 var names = [];
