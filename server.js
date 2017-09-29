@@ -99,8 +99,11 @@ app.get('/counter', function(req,res) {
     res.send(counter.toString());
 });
 
+var content = '';
 app.get('/comment', function(req, res) {
-   res.send('Ready to receive comment content.'); 
+    var content = req.query.content;
+    content.push(filly);
+   res.send(JSON.stringify(content)); 
 });
 
 var names = [];
