@@ -29,12 +29,8 @@ comment.onclick = function() {
           if(requeset.status == 200) {
               var content = request.responseText;
               content = JSON.parse(content);
-              var clist = '';
-              for (var i = 0; i < content.length; i++) {
-                  clist += '<li>' + content[i] + '</li>';
-              }
-              var ul = document.getElementById('comment_content');
-              ul.innerHTML = clist;
+              var para = document.getElementById('paragraph');
+              para.innerHTML = content;
           }
       }
   };
