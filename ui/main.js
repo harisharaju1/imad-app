@@ -21,22 +21,13 @@ button.onclick = function() {
     request.send(null);
 };
 
+var commentInput = document.getElementById('filly');
+var filly = commentInput.value;
 var comment = document.getElementById('comment_btn');
 comment.onclick = function() {
-  var request = new XMLHttpRequest();
-  request.onreadystatechange = function() {
-      if(request.readyState === XMLHttpRequest.DONE) {
-          if(requeset.status == 200) {
-              var content = request.responseText;
-              content = JSON.parse(content);
-              var paragraph = document.getElementById('para');
-              paragraph.innerHTML = content;
-          }
-      }
-  };
-  var commentInput = document.getElementById('filly');
-  var filly = commentInput.value;
-  request.send(null);
+    var coomcon = 'this is test';
+    var paragraph = document.getElementById('para');
+    paragraph.innerHTML = coomcon; 
 };
 
 //Submit name
