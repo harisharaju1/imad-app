@@ -99,6 +99,10 @@ app.get('/counter', function(req,res) {
     res.send(counter.toString());
 });
 
+app.get('/comment', function(req, res) {
+   res.send('Ready to receive comment content.'); 
+});
+
 var names = [];
 app.get('/submit-name', function(req,res) {
     //Get the name from the request object
@@ -114,9 +118,8 @@ app.get('/:articleName', function (req, res) {
   res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/comment', function(req, res) {
-   res.send('Ready to receive comment content.'); 
-});
+
+
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
