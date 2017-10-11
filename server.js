@@ -108,16 +108,17 @@ app.get('/submit-name', function(req,res) {
     res.send(JSON.stringify(names));
 });
 
+var comment = 'Arbitrary comment';
+app.get('/commentInput', function (req, res) {
+    res.send(comment);
+});
+
 app.get('/:articleName', function (req, res) {
   //using the express's req function 
   var articleName = req.params.articleName;
   res.send(createTemplate(articles[articleName]));
 });
 
-var comment = 'Arbitrary comment';
-app.get('/commentInput', function (req, res) {
-    res.send(comment);
-});
 
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
