@@ -21,6 +21,12 @@ button.onclick = function() {
     request.send(null);
 };
 
+var comment = document.getElementById('comment_btn');
+comment.onclick = function() {
+  var sampleText = 'This is an arbitrary comment';
+  var displayer = document.getElementById('display');
+  displayer.innerHTML = sampleText;
+};
 
 //Submit name
 var submit = document.getElementById('submit_btn');
