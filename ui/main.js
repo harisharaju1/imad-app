@@ -22,25 +22,6 @@ button.onclick = function() {
 };
 
 
-var comment = document.getElementById('comment_btn');
-comment.onclick = function() {
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-        if(request.readyState === XMLHttpRequest.DONE) {
-            if(request.satus === 200) {
-                var content = request.responseText;
-                comment = JSON.parse(content);
-                var body = document.getElementById('comment');
-                body.innerHTML = content;
-            }
-        }
-    };
-    var commentInput = document.getElementById('comment');
-    var comment = commentInput.value;
-    request.open('GET', 'http://harisharaju1.imad.hasura-app.io/commentInput', true); 
-    request.send(null);
-};
-
 //Submit name
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
