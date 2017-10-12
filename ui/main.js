@@ -23,14 +23,26 @@ button.onclick = function() {
 
 var comment = document.getElementById('comment_btn');
 comment.onclick = function() {
-  var sampleText = 'This is an arbitrary comment';
-  var displayer = document.getElementById('display');
-  displayer.innerHTML = sampleText;
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if(request.readyState === XMLHttpRequest.DONE) {
+        if(request.status == 200) {
+            var sampleText = request.responseText;
+            var displayer = document.getElementById('display');
+            displayer.innerHTML = sampleText;
+        }
+    }  
+  };  
+  var commentInput = document.getElementById('comment');
+  var content = commentInput.value;
+  request.open('GET', 'http://harisharaju1.imad.hasura-app.io/comment?content=' + content, true);
+  request.send(null);
 };
 
 //Submit name
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
+    //Create a request
      var request = new XMLHttpRequest();
     //Capture the response and store it in a variable
     request.onreadystatechange = function() {
