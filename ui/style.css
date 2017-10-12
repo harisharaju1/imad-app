@@ -3,6 +3,7 @@ body {
     background-color: lightgrey;
     margin-top: 60px;
     background-image: url('https://images.unsplash.com/photo-1496309732348-3627f3f040ee?dpr=1&auto=compress,format&fit=crop&w=1050&h=&q=80&cs=tinysrgb&crop=');
+    color: green;
 }
 
 .center {
