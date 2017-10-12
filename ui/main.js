@@ -21,8 +21,11 @@ button.onclick = function() {
     request.send(null);
 };
 
+//select button
 var comment = document.getElementById('comment_btn');
+//when button is clicked
 comment.onclick = function() {
+  //create a request    
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if(request.readyState === XMLHttpRequest.DONE) {
