@@ -108,9 +108,10 @@ app.get('/submit-name', function(req,res) {
     res.send(JSON.stringify(names));
 });
 
-var comment = 'Arbitrary comment';
+var comment = '';
 app.get('/commentInput', function (req, res) {
-    res.send(comment);
+    var comments = req.query.comment; 
+    res.send(JSON.stringify(comments));
 });
 
 app.get('/:articleName', function (req, res) {
