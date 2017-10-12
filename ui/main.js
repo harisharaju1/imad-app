@@ -28,16 +28,16 @@ comment.onclick = function() {
     request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.satus === 200) {
-                var shizz = request.responseText;
-                shizz = JSON.parse(shizz);
-                var paragraph = document.getElementById('para');
-                paragraph.innerHTML = shizz;
+                var content = request.responseText;
+                comment = JSON.parse(content);
+                var body = document.getElementById('comment');
+                body.innerHTML = content;
             }
         }
     };
-    var commentInput = document.getElementById('filly');
-    var filly = commentInput.value;
-    request.open('GET', 'http://harisharaju1.imad.hasura-app.io/comment', true); 
+    var commentInput = document.getElementById('comment');
+    var comment = commentInput.value;
+    request.open('GET', 'http://harisharaju1.imad.hasura-app.io/commentInput', true); 
     request.send(null);
 };
 
