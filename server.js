@@ -111,7 +111,7 @@ app.get('/submit-name', function(req,res) {
 var comment = '';
 app.get('/comment', function(req, res) {
   var comment = req.query.content;
-  res.send(JSON.stringify(comment));
+  res.send(comment.toString());
 });
 
 app.get('/:articleName', function (req, res) {
