@@ -108,12 +108,6 @@ app.get('/submit-name', function(req,res) {
     res.send(JSON.stringify(names));
 });
 
-var comment = '';
-app.get('/commentInput', function (req, res) {
-    var comments = req.query.comment; 
-    res.send(JSON.stringify(comments));
-});
-
 app.get('/:articleName', function (req, res) {
   //using the express's req function 
   var articleName = req.params.articleName;
